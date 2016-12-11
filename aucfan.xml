@@ -11,14 +11,14 @@
 				<url></url>
 			</urls>
 			<inputs>
-				<key id="name" type="xs:string" paramType="query" required="true" />
-				<key id="username" type="xs:string" paramType="variable" required="true" />
-				<key id="password" type="xs:string" paramType="variable" required="true" />
+				<key id="query" type="xs:string" paramType="query" required="true" />
+				<key id="id" type="xs:string" paramType="variable" required="true" />
+				<key id="pw" type="xs:string" paramType="variable" required="true" />
 			</inputs>
 			<execute>
 				<![CDATA[ 
 					y.include("http://yqlblog.net/samples/base64.js"); 
-					var authheader = "Basic "+Base64.encode(username+":"+password);
+					var authheader = "Basic "+Base64.encode(id+":"+pw);
 					response.object = request.header("Authorization",authheader).post(y.queryParams).response;
 				]]>
 			</execute>
