@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
-        <meta>
-                <author>Seon-Wook Park</author>
-        </meta>
- 
-        <bindings>
-                <select itemPath="" produces="XML">
-                        <inputs>
-                                <key id='url' type='xs:string' paramType='variable' required='true' />
-                                <key id='username' type='xs:string' paramType='variable' required='true' />
-                                <key id='password' type='xs:string' paramType='variable' required='true' />
-                        </inputs>
-                        <execute><![CDATA[
-                                y.include("http://yqlblog.net/samples/base64.js");  
-                                var authheader = "Basic "+Base64.encode(username+":"+password);
-                                response.object = y.rest(url).header('Authorization', authheader).get().response;
-                                y.sync();
-                        ]]></execute>
-                </select>
-        </bindings>
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd" https="true">
+<meta>
+<author>Seon-Wook Park</author>
+</meta>
+<bindings>
+<select itemPath="" produces="XML">
+<inputs>
+<key id='url' type='xs:string' paramType='variable' required='true' />
+<key id='username' type='xs:string' paramType='variable' required='true' />
+<key id='password' type='xs:string' paramType='variable' required='true' />
+</inputs>
+<execute><![CDATA[
+y.include("http://yqlblog.net/samples/base64.js");
+var authheader = "Basic "+Base64.encode(username+":"+password);
+response.object = y.rest(url).header('Authorization', authheader).get().response;
+y.sync();
+]]></execute>
+</select>
+</bindings>
 </table>
