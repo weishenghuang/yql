@@ -21,7 +21,7 @@ response.object =
 y.sync();*/
 
 var myRequest = y.rest(url);  
-      var data = myRequest.accept('text/html').
+      var data = myRequest.accept('html').
                  contentType("application/x-www-form-urlencoded").
                  post(postdata).response;
       var xdata = y.xpath(data,xpath);
