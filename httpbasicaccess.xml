@@ -13,7 +13,11 @@
 <execute><![CDATA[
 y.include("http://yqlblog.net/samples/base64.js");
 var authheader = "Basic "+Base64.encode(username+":"+password);
-response.object = y.rest(url).header('Authorization', authheader).get().response;
+var rs = y.rest(url).header('Authorization', authheader).get().response;
+response.object = 
+<html>
+{rs}
+</html>
 y.sync();
 ]]></execute>
 </select>
