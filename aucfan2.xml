@@ -8,16 +8,14 @@
       </urls>
       <inputs>  
         <key id='query' type='xs:string' paramType='variable' required="true" />  
-        <key id='username' type='xs:boolean' paramType='variable' required="true"/> 
-        <key id='password' type='xs:boolean' paramType='variable' required="true"/> 
+        <key id='username' type='xs:string' paramType='variable' required="true"/> 
+        <key id='password' type='xs:string' paramType='variable' required="true"/> 
       </inputs>  
       <execute><![CDATA[  
         y.include("http://yqlblog.net/samples/base64.js");  
         var authheader = "Basic "+Base64.encode(username+":"+password);  
-        response.object = request.header("Authorization",authheader).get(url_path).response;  
-        var res = {}; 
-        res.body = y.rest(url_path).head().headers; 
-        response.object=res.body; 
+        response.object = request.header("Authorization",authheader).get().response;  
+      
       ]]></execute>  
     </select>  
   </bindings>  
