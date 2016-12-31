@@ -3,8 +3,9 @@
 <meta>
 <author>Seon-Wook Park</author>
 </meta>
+<html>
 <bindings>
-<select itemPath="" produces="html">
+<select itemPath="" produces="XML">
 <inputs>
 <key id='url' type='xs:string' paramType='variable' required='true' />
 <key id='username' type='xs:string' paramType='variable' required='true' />
@@ -29,4 +30,5 @@ var myRequest = y.rest(url);
 ]]></execute>
 </select>
 </bindings>
+</html>
 </table>
