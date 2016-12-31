@@ -19,7 +19,7 @@
 				<![CDATA[ 
 					y.include("http://yqlblog.net/samples/base64.js"); 
 					var authheader = "Basic "+Base64.encode(id+":"+pw);
-					response.object = request.header("Authorization",authheader).post(y.queryParams).response;
+					response.object = request.header("Authorization",authheader).post(query).response;
 				]]>
 			</execute>
 		</select>
