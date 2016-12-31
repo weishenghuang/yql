@@ -2,9 +2,12 @@
   <meta>  
     <sampleQuery>select * from {table} where url_path='www.example.com' and header='true';</sampleQuery>    </meta>  
   <bindings>  
-    <select itemPath="" produces="XML">  
+    <select itemPath="" produces="JSON">  
+      <urls>
+        <url>http://pro.aucfan.com/search/query?{query}</url>
+      </urls>
       <inputs>  
-        <key id='url_path' type='xs:string' paramType='variable' required="true" />  
+        <key id='query' type='xs:string' paramType='variable' required="true" />  
         <key id='username' type='xs:boolean' paramType='variable' required="true"/> 
         <key id='password' type='xs:boolean' paramType='variable' required="true"/> 
       </inputs>  
