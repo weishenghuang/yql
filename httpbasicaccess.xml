@@ -4,7 +4,7 @@
 <author>Seon-Wook Park</author>
 </meta>
 <bindings>
-<select itemPath="" produces="XML">
+<select itemPath="" produces="html">
 <inputs>
 <key id='url' type='xs:string' paramType='variable' required='true' />
 <key id='username' type='xs:string' paramType='variable' required='true' />
