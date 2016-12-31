@@ -12,9 +12,9 @@
         y.include("http://yqlblog.net/samples/base64.js");  
         var authheader = "Basic "+Base64.encode(username+":"+password);  
         response.object = request.header("Authorization",authheader).get(url_path).response;  
-        /*var res = {}; 
+        var res = {}; 
         res.body = y.rest(url_path).head().headers; 
-        response.object=res.body; */
+        response.object=res.body; 
       ]]></execute>  
     </select>  
   </bindings>  
