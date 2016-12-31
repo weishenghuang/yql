@@ -1,0 +1,27 @@
+<table xmlns="http://query.yahooapis.com/v1/schema/table.xsd">
+<meta>
+<author>Andrew Guyton</author>
+<documentationURL>
+http://groups.google.com/group/foursquare-api/web/api-documentation
+</documentationURL>
+<sampleQuery>select * from {table}</sampleQuery>
+</meta>
+<bindings>
+<select itemPath="" produces="XML">
+<urls>
+<url>http://pro.aucfan.com/search/query?{params}</url>
+</urls>
+<inputs>
+<key id="params" type="xs:string" paramType="variable" required="true"/>
+<key id="username" type="xs:string" paramType="variable" required="true"/>
+<key id="password" type="xs:string" paramType="variable" required="true"/>
+</inputs>
+<execute>
+<![CDATA[
+if(!vid && !venue && !shout){ out = <error>I need a vid, venue or shout</error> response.object = out; } else { y.include("http://yqlblog.net/samples/base64.js"); var authheader = "Basic "+Base64.encode(username+":"+password); response.object = request.header("Authorization",authheader).post(y.queryParams).response; }
+]]>
+</execute>
+</select>
+</bindings>
+</table>
+<!--  dt1.yql.gq1.yahoo.com Sat Dec 31 08:06:54 UTC 2016  -->
